@@ -1,0 +1,67 @@
+.header{
+	background-color: #3ca3aa;
+	height: 68px;
+}
+
+.header h1{
+	float: left;
+	margin-left: 20px;
+	color: white;
+}
+
+.box1 {
+	border: 1px solid #ccc;
+	margin: 1%;
+	height: 553px;
+	float: left;
+	width: 98%;
+	-webkit-box-shadow:  -2px 2px 6px 0px #888;
+    box-shadow:  -2px 2px 6px 0px #888;
+}
+
+.box1-content {
+	margin: 1%;
+	height: 98%;
+	float: left;
+	width: 98%;
+}
+
+.box1-title {
+	background-color: #CCC;
+	float: left;
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}
+.box1-title-left {
+	float: left;
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+.box1-title-right {
+	float: right;
+	margin-top: 5px;
+	margin-right: 15px;
+}
+
+.table-full {
+	width: 100%;
+}
+
+
+
+
+/*datatable customizations*/
+table.dataTable tr.odd {
+	background-color: #d3f5ef;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+	background-color: #c7e7e2;
+}
+
+table.dataTable tr.even td.sorting_1 {
+	background-color: #e8f9ff;
+}

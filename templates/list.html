@@ -1,0 +1,45 @@
+{>"base"/}
+{<content}
+
+<div class="box1">
+	<div class="box1-title">
+		<span class="box1-title-left">To-Do:</span> 
+		<span class="box1-title-right"><a href="#" onclick="show('edit',{'accion':'Add a new ToDo','destination':'findAll();','todo': {'id':'','description':'', 'priority':'3', 'due_date' : '', 'status':''} });">
+			<i class="icon-plus-sign"></i> add</a>
+		</span> 
+		
+		
+	</div>
+	<div class="box1-content">
+		<div class="demo_jui">
+		<table cellpadding="0" cellspacing="0" border="0" class="table-full" id="todo-table">
+	        <thead>
+	          <tr>
+	            <th width=20 class="text-center">ID</th>
+	            <th>Description</th>
+	            <th width=60>Priority</th>
+	            <th width=220>Due Date</th>
+	            <th width=100>Actions</th>
+	            <th width=100>Status</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        {#todos}
+	          <tr class="">
+	            <td width=20 class="text-center">{id}</td>
+	            <td>{description}</td>
+	            <td width=60 class="text-center">{priority}</td>
+	            <td width=220 class="text-center">{due_date}</td>
+	            <td width=100 class="text-center">
+	            		<a href="#" onclick="show('edit',{'accion':'Edit ToDo: {id}','destination':'findAll();', 'todo': {'id':{id},'description':'{description}', 'priority':'{priority}', 'due_date' : '{due_date}', 'status':'{status}'} });">edit</a> &nbsp;
+	            		<a href="#" onclick="deleteTodo({id}, 'findAll();');">delete</a>
+	            </td>
+	            <td width=100 class="text-center">{@if cond="'{status}'=='1'"}Completed {:else}New{/if}</td>
+	          </tr>
+	         {/todos}
+	        </tbody>
+     	</table>
+		</div>
+	</div>
+</div>
+{/content}

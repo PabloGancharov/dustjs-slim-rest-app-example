@@ -1,0 +1,62 @@
+{>"base"/}
+{<content}
+
+<div class="box1">
+	<div class="box1-title">
+		<span class="box1-title-left">{accion}</span> <span class="box1-title-right"><a href="#" onclick="{destination}">
+		<i class="icon-remove-sign"></i> close</a></span> 
+	</div>
+	{#todo}
+	<div class="box1-content">
+		<form class="form-horizontal">
+			<input id="inputId" type="hidden" value="{id}">
+			<div class="control-group">
+				<label class="control-label" for="inputDescription">Description</label>
+				<div class="controls">
+				  <textarea style="width: 440px;" id="inputDescription" placeholder="Description">{description}</textarea>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputPriority">Priority</label>
+				<div class="controls">
+				  <select id="inputPriority">
+				  <option {@if cond="'{priority}'=='1'"} selected="selected"{/if}>1</option>
+				  <option {@if cond="'{priority}'=='2'"} selected="selected"{/if}>2</option>
+				  <option {@if cond="'{priority}'=='3'"} selected="selected"{/if}>3</option>
+				  <option {@if cond="'{priority}'=='4'"} selected="selected"{/if}>4</option>
+				  <option {@if cond="'{priority}'=='5'"} selected="selected"{/if}>5</option>
+				</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputDueDate">Due date</label>
+				<div class="controls">
+				  <input id="inputDueDate" type="hidden" value="{due_date}">
+				  <div id="divDueDate"></div>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputStatus">Status</label>
+				<div class="controls">
+					<label class="checkbox">
+						<input type="checkbox" id="inputStatus" {@if cond="'{status}'=='1'"} checked {/if}> Finished
+					</label>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" ></label>
+				<div class="controls">
+					<button type="submit" class="btn btn-primary" onclick="saveTodo($('#inputId').val(), $('#inputDescription').val(), $('#inputPriority').val(), $('#inputDueDate').val(), $('#inputStatus').is(':checked')? 1 : 0 , '{destination}');" >Save changes</button>&nbsp;
+					<button type="button" class="btn" onclick="{destination}" >Cancel</button>
+				</div>
+
+			</div>
+
+		</form>
+
+	{/todo}
+	</div>
+</div>
+
+{/content}
+
